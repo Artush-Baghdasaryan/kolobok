@@ -1,0 +1,87 @@
+@import "src/app/6-styles/variables";
+
+.file-panel {
+
+  .file-wrapper {
+
+    .file {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px;
+
+      .icon {
+        margin: 10px;
+        font-size: 35px;
+      }
+
+      .file-type-icon {
+        .icon {
+          color: #673ab7;
+        }
+      }
+
+      .name-wrapper {
+        margin-right: auto;
+        font-size: 18px;
+      }
+
+      .file-tools {
+        display: flex;
+        flex-direction: row;
+        font-size: 8px;
+
+        .tool {
+          align-items: center;
+
+          .icon {
+            color: #673ab7;
+
+          }
+
+          .icon:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .dropdown {
+        display: none;
+      }
+
+      @media screen and (max-width: 600px) {
+        .file-tools {
+          display: none;
+        }
+
+        .dropdown {
+          display: block;
+        }
+      }
+    }
+
+    .file:hover {
+      background-color: #673ab7;
+      color: white;
+      cursor: pointer;
+
+      .file-type-icon {
+        .icon {
+          color: white;
+        }
+      }
+
+      .file-tools {
+        .tool {
+          .icon {
+            color: white;
+          }
+        }
+
+      }
+    }
+
+  }
+}

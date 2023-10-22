@@ -1,0 +1,25 @@
+<div class="group-info-panel">
+  <div class="info-wrapper">
+    <mat-card class="group-info">
+      <app-group-avatar mat-card-xl-image class="group-image"
+                        [avatarPath]="group.image"></app-group-avatar>
+      <div #groupName class="name-wrapper me-auto">
+        {{group.name}}
+        <span class="rating" [innerHTML]="rating"></span>
+      </div>
+      <div class="members">
+        <!--        <div *ngFor="let member of membersTest; let i = index" class="member">-->
+        <!--          <app-user-avatar *ngIf="i != 6" [avatarPath]="memberAvatarTest"></app-user-avatar>-->
+        <!--        </div>-->
+        <span class="trancate">
+                    <i class="material-icons">forward</i>
+                </span>
+        <span class="view-all">View all users</span>
+      </div>
+    </mat-card>
+  </div>
+</div>
+<div class="file-panel">
+  <app-file-table [group]="group" [docs]="docs"></app-file-table>
+  <!--  <app-comments></app-comments>-->
+</div>

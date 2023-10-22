@@ -1,0 +1,68 @@
+<mat-card class="p-3">
+  <app-header>
+    <mat-card *appHeaderElement>
+      <file-upload [formControl]="formControl" class="w-100 bg-light"></file-upload>
+    </mat-card>
+    <mat-card *appHeaderElement class="ms-auto">
+      <button mat-button class="w-100 bg-danger">
+        <app-icon (click)="deleteGroup()" [type]="IconType.Delete"></app-icon>
+      </button>
+    </mat-card>
+  </app-header>
+</mat-card>
+
+<mat-card class="file-panel p-3 mt-3">
+  <ng-container *ngIf="docs.length === 0">
+    <mat-card class="bg-light p-3 text-center">
+      There are no files in this group yet. Add them to display
+    </mat-card>
+  </ng-container>
+  <ng-container *ngIf="docs.length > 0">
+    <mat-card class="file-wrapper bg-light p-3">
+      <ng-container *ngFor="let f of docs">
+        <mat-card class="file">
+              <span class="file-type-icon">
+                <i *ngIf="isFileImage(f)" class="material-icons icon">image</i>
+                <i *ngIf="!isFileImage(f)" class="material-icons icon">description</i>
+              </span>
+          <mat-card-content class="name-wrapper">
+            <span>{{f.name}}</span>
+          </mat-card-content>
+
+          <span>Size {{(f.size / 1024 / 1024).toFixed(3)}}Mb</span>
+          <div class="file-tools">
+            <div class="tool">
+              <i class="material-icons icon icon-download">download</i>
+            </div>
+            <div class="tool">
+              <i class="material-icons icon icon-download">delete</i>
+            </div>
+            <div class="tool" (click)="analyzeImage(f.id)">
+              <i class="material-icons icon icon-download">search</i>
+            </div>
+          </div>
+
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
+                  class="dropdown">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon class="icon-download">download</mat-icon>
+              <span>Download</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon class="icon-delete">delete</mat-icon>
+              <span>Delete</span>
+            </button>
+            <button mat-menu-item (click)="analyzeImage(f.id)">
+              <mat-icon class="icon-analyze">search</mat-icon>
+              <span>Analyze</span>
+            </button>
+          </mat-menu>
+
+        </mat-card>
+      </ng-container>
+    </mat-card>
+  </ng-container>
+</mat-card>

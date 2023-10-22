@@ -1,0 +1,13 @@
+<div #groupsPanel class="groups-panel">
+  <div class="groups-wrapper">
+    <mat-card *ngFor="let g of groups" [attr.active]="selectedGroupId === g.id" class="group" (click)="selectGroup(g.id)">
+      <app-file [fileBackend]="g.image ? getIFileFromBase64(g.image) : stub" class="group-image"></app-file>
+      <div class="name-wrapper me-auto">
+        {{g.name}}
+      </div>
+      <span class="icon-wrapper" *ngIf="isGroupPrivate(g)">
+            <i class="material-icons">lock</i>
+          </span>
+    </mat-card>
+  </div>
+</div>

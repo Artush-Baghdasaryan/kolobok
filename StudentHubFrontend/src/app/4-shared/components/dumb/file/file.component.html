@@ -1,0 +1,8 @@
+<div class="file">
+  <ng-container *ngIf="isImage">
+    <img class="file__image object-fit-cover" [src]="src" alt="image">
+  </ng-container>
+  <ng-container *ngIf="!isImage">
+    <a [download]="fileBackend.name" [href]="src">DOWNLOAD</a>
+  </ng-container>
+</div>

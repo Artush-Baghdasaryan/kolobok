@@ -1,0 +1,29 @@
+.add-group-wrapper {
+  border-radius: 10px;
+  //background-color: white;
+  padding: 30px;
+  display: flex;
+  margin: 20px auto;
+  //right: 10px;
+  gap: 8px;
+  flex-direction: column;
+  //align-items: flex-start;
+  width: 70%;
+
+  .form-field {
+    width: 100%;
+  }
+
+  .add-group-button {
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .add-group-button:hover {
+    color: purple;
+  }
+
+  .file-upload__remove-button {
+    cursor: pointer;
+  }
+}

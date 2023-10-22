@@ -1,0 +1,11 @@
+<mat-card *ngIf="user" class="user__panel">
+  <app-user-avatar [avatarPath]="user.avatar" [size]="IconSize.usual"></app-user-avatar>
+  <div class="user__info">
+    <span class="user-name">{{user.nickname}}</span>
+    <span class="user-email">{{user.email}}</span>
+  </div>
+  <span class="notification-wrapper">
+      <i class="material-icons">notifications</i>
+    </span>
+  <!--  <div class="user__balance">$199.10</div>-->
+</mat-card>

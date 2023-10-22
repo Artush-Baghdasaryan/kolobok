@@ -1,0 +1,25 @@
+.user {
+  &__panel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: #673ab7;
+    padding: 10px;
+    align-items: center;
+    color: white;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-left: 10px;
+    margin-right: auto;
+  }
+
+  &__balance {
+    color: white;
+  }
+}

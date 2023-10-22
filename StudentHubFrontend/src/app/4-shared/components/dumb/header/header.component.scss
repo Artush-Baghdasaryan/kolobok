@@ -1,0 +1,8 @@
+@import "src/app/6-styles/variables";
+
+:host {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: $base-padding;
+  gap: $base-padding;
+}

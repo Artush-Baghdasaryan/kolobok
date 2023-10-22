@@ -1,0 +1,154 @@
+@import "src/app/6-styles/variables";
+
+
+.group-info-panel {
+  padding: $base-padding;
+  background-color: #673ab7;
+
+  .info-wrapper {
+
+    .group-info {
+      background-color: #673ab7;
+      color: white;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .group-image {
+        margin: 5px;
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 5px;
+      }
+    ;
+
+      .name-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .members {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        right: 0;
+        align-items: center;
+
+        .view-all {
+          display: none;
+        }
+
+        .trancate {
+          margin: 5px;
+        }
+
+        .trancate:hover, .view-all:hover {
+          color: #2c1750;
+          cursor: pointer;
+        }
+
+        @media screen and (max-width: 600px) {
+          .trancate, .member {
+            display: none;
+          }
+
+          .view-all {
+            display: block;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.file-panel {
+  margin: 2px;
+  padding: $base-padding;
+  height: 100%;
+
+  .file-wrapper {
+
+    .file {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px;
+
+      .icon {
+        margin: 10px;
+        font-size: 35px;
+      }
+
+      .file-type-icon {
+        .icon {
+          color: #673ab7;
+        }
+      }
+
+      .name-wrapper {
+        margin-right: auto;
+        font-size: 18px;
+      }
+
+      .file-tools {
+        display: flex;
+        flex-direction: row;
+        font-size: 8px;
+
+        .tool {
+          align-items: center;
+
+          .icon {
+            color: #673ab7;
+
+          }
+
+          .icon:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .dropdown {
+        display: none;
+      }
+
+      @media screen and (max-width: 600px) {
+        .file-tools {
+          display: none;
+        }
+
+        .dropdown {
+          display: block;
+        }
+      }
+    }
+
+    .file:hover {
+      background-color: #673ab7;
+      color: white;
+      cursor: pointer;
+
+      .file-type-icon {
+        .icon {
+          color: white;
+        }
+      }
+
+      .file-tools {
+        .tool {
+          .icon {
+            color: white;
+          }
+        }
+
+      }
+    }
+
+  }
+}

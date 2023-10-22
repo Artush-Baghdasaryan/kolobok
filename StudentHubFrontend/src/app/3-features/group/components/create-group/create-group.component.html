@@ -1,0 +1,40 @@
+<mat-card class="add-group-wrapper">
+  <mat-card-header class="d-flex justify-content-center w-auto">
+    <mat-card-title>
+      Add new group
+    </mat-card-title>
+  </mat-card-header>
+
+  <ng-container [formGroup]="addGroupForm">
+    <mat-form-field class="form-field">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Access type</mat-label>
+      <mat-select formControlName="accessType">
+        <mat-option value="0">Public</mat-option>
+        <mat-option value="1">Private</mat-option>
+        <mat-option value="2">For sale</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <div class="d-flex justify-content-center w-100 position-relative">
+      <file-upload [title]="'Add preview'" formControlName="avatar" [requiredFileType]="imagesAccept"></file-upload>
+      <div class="position-absolute end-0 d-flex flex-column justify-content-center" *ngIf="hasFile">
+        <app-icon
+          class="ms-auto h-auto file-upload__remove-button"
+          [type]="IconType.Close"
+          (click)="resetAvatar()"
+        >
+        </app-icon>
+      </div>
+    </div>
+
+    <button mat-button [type]="" class="add-group-button" (click)="submit()">Add group</button>
+  </ng-container>
+</mat-card>

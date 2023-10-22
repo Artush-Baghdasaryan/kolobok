@@ -1,0 +1,9 @@
+@import "src/app/6-styles/variables";
+
+.file {
+  &__image {
+    object-fit: cover;
+    width: $element-height;
+    height: $element-height;
+  }
+}

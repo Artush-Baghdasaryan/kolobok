@@ -1,0 +1,3 @@
+<div *ngFor="let member of members; let i = index" class="member">
+  <app-user-avatar *ngIf="i != 6" [avatarPath]="member.avatar"></app-user-avatar>
+</div>

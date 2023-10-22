@@ -1,0 +1,17 @@
+<div class="sidenav">
+  <app-user-avatar-row [user]="userService.user$ | async"></app-user-avatar-row>
+  <div class="sections-wrapper">
+    <div class="my-groups active">
+      <span>My groups</span>
+    </div>
+    <div class="global-search">
+      <span>Global search</span>
+    </div>
+  </div>
+  <div class="container-fluid search-wrapper">
+    <form class="d-flex" role="search" [formGroup]="searchForm">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="search">
+    </form>
+  </div>
+  <app-groups></app-groups>
+</div>

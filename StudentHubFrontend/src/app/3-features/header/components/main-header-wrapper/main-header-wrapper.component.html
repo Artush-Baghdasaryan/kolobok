@@ -1,0 +1,25 @@
+<mat-card>
+  <app-header class="main-header">
+    <ng-template appHeaderElement>
+      <app-icon *ngIf="!(sidenavService.opened$ | async)"
+                [type]="IconType.Menu"
+                (click)="sidenavService.toggleSidenav()"
+      ></app-icon>
+    </ng-template>
+    <ng-template appHeaderElement>
+      <app-icon style="opacity: 0" [type]="IconType.User">
+
+      </app-icon>
+    </ng-template>
+    <ng-template appHeaderElement>
+      <app-icon
+        class="ms-auto"
+        *ngIf="(sidenavService.opened$ | async)
+      && ((sidenavService.width$ | async) === 100)"
+        (click)="sidenavService.toggleSidenav()"
+        [type]="IconType.Close"
+      >
+      </app-icon>
+    </ng-template>
+  </app-header>
+</mat-card>

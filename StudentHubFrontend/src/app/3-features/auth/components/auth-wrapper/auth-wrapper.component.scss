@@ -1,0 +1,13 @@
+@import "src/styles";
+@import "src/app/6-styles/variables";
+
+.auth-wrapper {
+  background-image: $bg;
+  height: 100vh;
+  width: 100vw;
+
+  &__auth-panel {
+    display: block;
+    margin: $base-padding auto;
+  }
+}

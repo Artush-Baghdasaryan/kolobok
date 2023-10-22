@@ -1,0 +1,19 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    class="side--bg"
+    [mode]="'side'"
+    [opened]="sidenavService.opened$ | async"
+    [ngStyle]="getStyle(screenService.isDesktop$ | async)"
+    disableClose>
+    <ng-container *ngTemplateOutlet="header"></ng-container>
+    <app-sidenav-wrapper></app-sidenav-wrapper>
+  </mat-sidenav>
+  <mat-sidenav-content class="main--bg" style="height: 100vh">
+    <ng-container *ngTemplateOutlet="header"></ng-container>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #header>
+  <app-main-header-wrapper *ngIf="!(screenService.isDesktop$ | async)"></app-main-header-wrapper>
+</ng-template>

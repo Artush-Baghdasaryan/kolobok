@@ -1,0 +1,15 @@
+<ng-container *ngIf="!file">
+  <input type="file" class="file-input"
+         [accept]="requiredFileType"
+         (change)="onFileSelected($event)" #fileUpload>
+
+  <div class="file-upload w-100">
+    <button mat-button class="upload-btn w-100"
+            (click)="fileUpload.click()">
+      {{title ?? 'Add file'}}
+    </button>
+  </div>
+</ng-container>
+<ng-container *ngIf="file">
+  <app-file class="m-auto" [fileBackend]="file"></app-file>
+</ng-container>
